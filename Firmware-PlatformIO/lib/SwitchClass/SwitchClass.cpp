@@ -203,7 +203,7 @@ Switch::Switch(int a)
     setswitch(i, 0);
   }
   switchRelay = 0;
-  switchOn = 0;
+  switchOn = 1;
 
   for (int i = 0; i < PWMOutput_Num; i++)
   {

@@ -292,7 +292,7 @@ void processCommand()
   {
   case 'S':
     if (_switch.getswitchvalue(SensorPos) < 10.0) {
-    Serial.println(ASCOM_err[5]);//Checking undervoltage
+    Serial.println(ASCOM_err[9]);//Checking undervoltage
     break;
     }
     UIChanged = true;
@@ -383,7 +383,7 @@ void processCommand()
     ESP.restart();
     break;
     case 'e':
-    Serial.println("#e0:" + SwitchErrorMessage + ";");
+    Serial.println(SwitchErrorMessage);
     break; 
   default:
     Serial.println("Unknown command received");
@@ -540,7 +540,7 @@ void currentLimiter()
 
 
     //Setting flags for error messages to display in the client
-    SwitchErrorMessage=" ";
+    SwitchErrorMessage="#E0: ;";
     for(int i=0; i<DCOutput_Num;i++) 
     {
       if(_switch.DClimitflag[i]) 
@@ -932,7 +932,7 @@ void webSocketEvent(byte num, WStype_t type, uint8_t *payload, size_t length)
         data = doc["state"].as<String>();
         if (data != "")
           val = data.toInt();
-        _switch.setswitchvalue(DCOutput_Num + ind, val);
+        _switch.setswitchvalue(DCOutput_Num + ind-1, val);
         return;
       }
     }

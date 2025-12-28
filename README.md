@@ -231,9 +231,9 @@ This project includes extra custom commands for device-specific features:
 | **Get Limit** | `# l <index>` | `#l<index>:<value>;` | Int | Get the current limit of a switch |
 | **Set Limit** | `# L <index>` | `#l<index>:<value>;` | Int | Set the current limit of a switch |
 | **Get local IP** | `# I 0` | `#I0:<value>;` | String | Get the IP Address of the device |
-| **Set WiFi SSID** | `# F 0` | `#f0:<value>;` | String | Set the SSID of the WiFi AP |
+| **Set WiFi SSID** | `# F 0 <ssid>` | `#f0:<value>;` | String | Set the SSID of the WiFi AP |
 | **Get WiFi SSID** | `# f 0` | `#f0:<value>;` | String | Get the SSID of the WiFi AP |
-| **Set WiFi PASSWORD** | `# H 0` | `--------` | String | Set the password of the WiFi AP |
+| **Set WiFi PASSWORD** | `# H 0 <password>` | `--------` | String | Set the password of the WiFi AP |
 | **Restart ESP32** | `# p 0` | `--------` | - | Restart the device |
 | **Get Last Error** | `# e 0` | `#e0:<value>;` | String | Get the last error message raised by the device |
 
